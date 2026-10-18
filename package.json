@@ -1,6 +1,7 @@
 {
   "name": "pebble-fish-time",
-  "version": "0.1.0",
+  "author": "Darachnid",
+  "version": "0.2.0",
   "private": true,
   "keywords": [
     "pebble-app",
@@ -21,31 +22,135 @@
       "media": [
         {
           "type": "bitmap",
-          "name": "FISH_LABRADOR",
+          "name": "FISH_COREGONUS_LABRADORIUS",
           "file": "images/coregonus_labradorius.png"
         },
         {
           "type": "bitmap",
-          "name": "FISH_SMELT",
+          "name": "FISH_OSMERUS_MORDAX",
           "file": "images/osmerus_mordax.png"
         },
         {
           "type": "bitmap",
-          "name": "FISH_BROOK",
+          "name": "FISH_SALVELINUS_FONTINALIS",
           "file": "images/salvelinus_fontinalis.png"
         },
         {
           "type": "bitmap",
-          "name": "FISH_LAKE",
+          "name": "FISH_SALVELINUS_NAMAYCUSH",
           "file": "images/salvelinus_namaycush.png"
         },
         {
           "type": "bitmap",
-          "name": "FISH_SALMON",
+          "name": "FISH_SALMO_SALAR",
           "file": "images/salmo_salar.png"
+        },
+        {
+          "type": "bitmap",
+          "name": "FISH_ESOX_MASQUINONGY",
+          "file": "images/esox_masquinongy.png"
+        },
+        {
+          "type": "bitmap",
+          "name": "FISH_ESOX_RETICULATUS",
+          "file": "images/esox_reticulatus.png"
+        },
+        {
+          "type": "bitmap",
+          "name": "FISH_ESOX_AMERICANUS",
+          "file": "images/esox_americanus.png"
+        },
+        {
+          "type": "bitmap",
+          "name": "FISH_ESOX_INDUS",
+          "file": "images/esox_indus.png"
+        },
+        {
+          "type": "bitmap",
+          "name": "FISH_COREGONUS_QUADRILATERALIS",
+          "file": "images/coregonus_quadrilateralis.png"
+        },
+        {
+          "type": "bitmap",
+          "name": "FISH_LEPOMIS_AURITUS",
+          "file": "images/lepomis_auritus.png"
+        },
+        {
+          "type": "bitmap",
+          "name": "FISH_LEPOMIS_GIBBOSUS",
+          "file": "images/lepomis_gibbosus.png"
+        },
+        {
+          "type": "bitmap",
+          "name": "FISH_MENIDIA_NOTATA",
+          "file": "images/menidia_notata.png"
+        },
+        {
+          "type": "bitmap",
+          "name": "FISH_ETHEOSTOMA_FUSIFORME",
+          "file": "images/etheostoma_fusiforme.png"
+        },
+        {
+          "type": "bitmap",
+          "name": "FISH_ETHEOSTOMA_CAPRODES",
+          "file": "images/etheostoma_caprodes.png"
+        },
+        {
+          "type": "bitmap",
+          "name": "FISH_ETHEOSTOMA_OLMSTEDI",
+          "file": "images/etheostoma_olmstedi.png"
+        },
+        {
+          "type": "bitmap",
+          "name": "FISH_ROCCUS_LINEATUS",
+          "file": "images/roccus_lineatus.png"
+        },
+        {
+          "type": "bitmap",
+          "name": "FISH_MORONE_AMERICANA",
+          "file": "images/morone_americana.png"
+        },
+        {
+          "type": "bitmap",
+          "name": "FISH_STIZOSTEDION_CANADENSE",
+          "file": "images/stizostedion_canadense.png"
+        },
+        {
+          "type": "bitmap",
+          "name": "FISH_PERCA_FLAVESCENS_AMERICANA_FLUVIATILIS",
+          "file": "images/perca_flavescens_americana_fluviatilis.png"
+        },
+        {
+          "type": "bitmap",
+          "name": "FISH_AMIURUS_NEBULOSUS",
+          "file": "images/amiurus_nebulosus.png"
+        },
+        {
+          "type": "bitmap",
+          "name": "FISH_GASTEROSTEUS_ACULEATUS",
+          "file": "images/gasterosteus_aculeatus.png"
+        },
+        {
+          "type": "bitmap",
+          "name": "FISH_COTTUS_GRACILIS",
+          "file": "images/cottus_gracilis.png"
+        },
+        {
+          "type": "bitmap",
+          "name": "FISH_LOTA_LOTA_MACULOSA",
+          "file": "images/lota_lota_maculosa.png"
+        },
+        {
+          "type": "bitmap",
+          "name": "FISH_PETROMYZON_MARINUS",
+          "file": "images/petromyzon_marinus.png"
+        },
+        {
+          "type": "bitmap",
+          "name": "FISH_ANQUILLA_ANQUILLA",
+          "file": "images/anquilla_anquilla.png"
         }
       ]
     }
-  },
-  "author": "Darachnid"
+  }
 }
