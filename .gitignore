@@ -1,4 +1,3 @@
 build/
 node_modules/
-.waf-*
-__pycache__/
+.lock-waf_*

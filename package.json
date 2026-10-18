@@ -1,7 +1,7 @@
 {
   "name": "pebble-fish-time",
   "author": "Darachnid",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "private": true,
   "keywords": [
     "pebble-app",
@@ -149,6 +149,96 @@
           "type": "bitmap",
           "name": "FISH_ANQUILLA_ANQUILLA",
           "file": "images/anquilla_anquilla.png"
+        },
+        {
+          "type": "bitmap",
+          "name": "FISH_UMBRA_LIMI",
+          "file": "images/umbra_limi.png"
+        },
+        {
+          "type": "bitmap",
+          "name": "FISH_FUNDULUS_MAJALIS",
+          "file": "images/fundulus_majalis.png"
+        },
+        {
+          "type": "bitmap",
+          "name": "FISH_FUNDULUS_HETEROCLITUS",
+          "file": "images/fundulus_heteroclitus.png"
+        },
+        {
+          "type": "bitmap",
+          "name": "FISH_FUNDULUS_DIAPHANUS",
+          "file": "images/fundulus_diaphanus.png"
+        },
+        {
+          "type": "bitmap",
+          "name": "FISH_CYPRINODON_VARIEGATUS",
+          "file": "images/cyprinodon_variegatus.png"
+        },
+        {
+          "type": "bitmap",
+          "name": "FISH_CATOSTOMUS_TERES",
+          "file": "images/catostomus_teres.png"
+        },
+        {
+          "type": "bitmap",
+          "name": "FISH_ERIMYSON_SUCETTA",
+          "file": "images/erimyson_sucetta.png"
+        },
+        {
+          "type": "bitmap",
+          "name": "FISH_SEMOTILUS_BULLARIS",
+          "file": "images/semotilus_bullaris.png"
+        },
+        {
+          "type": "bitmap",
+          "name": "FISH_SEMOTILUS_ATROMACULATUS",
+          "file": "images/semotilus_atromaculatus.png"
+        },
+        {
+          "type": "bitmap",
+          "name": "FISH_RHINICHTYS_ATRONASUS",
+          "file": "images/rhinichtys_atronasus.png"
+        },
+        {
+          "type": "bitmap",
+          "name": "FISH_RHINICHTYS_CATARACT",
+          "file": "images/rhinichtys_cataract.png"
+        },
+        {
+          "type": "bitmap",
+          "name": "FISH_PIMEPHALES_NOTATUS",
+          "file": "images/pimephales_notatus.png"
+        },
+        {
+          "type": "bitmap",
+          "name": "FISH_PIMEPHALES_PROMELAS",
+          "file": "images/pimephales_promelas.png"
+        },
+        {
+          "type": "bitmap",
+          "name": "FISH_NOTROPIS_BIFRENATUS",
+          "file": "images/notropis_bifrenatus.png"
+        },
+        {
+          "type": "bitmap",
+          "name": "FISH_NOTROPIS_CORNUTUS",
+          "file": "images/notropis_cornutus.png"
+        },
+        {
+          "type": "bitmap",
+          "name": "FISH_NOTEMIGONUS_CHRYSOLEUCUS",
+          "file": "images/notemigonus_chrysoleucus.png"
+        },
+        {
+          "type": "bitmap",
+          "name": "FISH_CLUPEA_PSEUDOHARENGUS",
+          "file": "images/clupea_pseudoharengus.png"
+        },
+        {
+          "type": "bitmap",
+          "name": "FISH_CLUPEA_SAPIDISSIMA",
+          "file": "images/clupea_sapidissima.png"
         }
       ]
     }
