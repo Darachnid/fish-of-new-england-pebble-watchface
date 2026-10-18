@@ -28,7 +28,7 @@ static const Fish FISH[NUM_FISH] = {
   {RESOURCE_ID_FISH_COTTUS_GRACILIS, "Slimy sculpin", "Cottus gracilis"},
   {RESOURCE_ID_FISH_LOTA_LOTA_MACULOSA, "Burbot", "Lota lota (maculosa)"},
   {RESOURCE_ID_FISH_PETROMYZON_MARINUS, "Sea lamprey", "Petromyzon marinus"},
-  {RESOURCE_ID_FISH_ANQUILLA_ANQUILLA, "Eel (ID uncertain)", "Anquilla anquilla"}
+  {RESOURCE_ID_FISH_ANQUILLA_ANQUILLA, "American eel", "Anguilla rostrata"}
 };
 static Window *s_window;
 static BitmapLayer *s_fish_layer;
