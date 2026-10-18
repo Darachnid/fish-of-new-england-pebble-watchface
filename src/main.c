@@ -86,7 +86,8 @@ static void init(void) {
   int w = bounds.size.w;
   s_fish_layer = bitmap_layer_create(GRect(6, 15, w - 12, 106));
   bitmap_layer_set_alignment(s_fish_layer, GAlignCenter);
-  bitmap_layer_set_compositing_mode(s_fish_layer, GCompOpSet);
+  bitmap_layer_set_background_color(s_fish_layer, GColorWhite);
+  bitmap_layer_set_compositing_mode(s_fish_layer, GCompOpAssign);
   layer_add_child(root, bitmap_layer_get_layer(s_fish_layer));
   s_common_layer = make_label(GRect(4, 125, w - 8, 22), FONT_KEY_GOTHIC_18_BOLD, GTextAlignmentCenter);
   s_scientific_layer = make_label(GRect(4, 148, w - 8, 20), FONT_KEY_GOTHIC_14, GTextAlignmentCenter);
