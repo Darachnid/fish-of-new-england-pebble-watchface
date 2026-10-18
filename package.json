@@ -2,19 +2,50 @@
   "name": "pebble-fish-time",
   "version": "0.1.0",
   "private": true,
-  "keywords": ["pebble-app", "fish", "watchface"],
+  "keywords": [
+    "pebble-app",
+    "fish",
+    "watchface"
+  ],
   "pebble": {
     "displayName": "Fish Time",
     "uuid": "87bf3072-420b-47e7-b27a-48cfe85789c1",
     "sdkVersion": "3",
-    "targetPlatforms": ["emery"],
-    "watchapp": {"watchface": true},
-    "resources": {"media": [
-      {"type":"bitmap","name":"FISH_LABRADOR","file":"images/coregonus_labradorius.png"},
-      {"type":"bitmap","name":"FISH_SMELT","file":"images/osmerus_mordax.png"},
-      {"type":"bitmap","name":"FISH_BROOK","file":"images/salvelinus_fontinalis.png"},
-      {"type":"bitmap","name":"FISH_LAKE","file":"images/salvelinus_namaycush.png"},
-      {"type":"bitmap","name":"FISH_SALMON","file":"images/salmo_salar.png"}
-    ]}
-  }
+    "targetPlatforms": [
+      "emery"
+    ],
+    "watchapp": {
+      "watchface": true
+    },
+    "resources": {
+      "media": [
+        {
+          "type": "bitmap",
+          "name": "FISH_LABRADOR",
+          "file": "images/coregonus_labradorius.png"
+        },
+        {
+          "type": "bitmap",
+          "name": "FISH_SMELT",
+          "file": "images/osmerus_mordax.png"
+        },
+        {
+          "type": "bitmap",
+          "name": "FISH_BROOK",
+          "file": "images/salvelinus_fontinalis.png"
+        },
+        {
+          "type": "bitmap",
+          "name": "FISH_LAKE",
+          "file": "images/salvelinus_namaycush.png"
+        },
+        {
+          "type": "bitmap",
+          "name": "FISH_SALMON",
+          "file": "images/salmo_salar.png"
+        }
+      ]
+    }
+  },
+  "author": "Darachnid"
 }
