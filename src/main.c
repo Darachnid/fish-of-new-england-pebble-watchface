@@ -1,8 +1,6 @@
 #include <pebble.h>
 #include <string.h>
 #define NUM_FISH 44
-#define DOUBLE_TAP_PAIR_WINDOW_MS 1500
-#define ADVANCE_COOLDOWN_MS 2000
 
 typedef struct {uint32_t resource_id; const char *common; const char *scientific;} Fish;
 static const Fish FISH[NUM_FISH] = {
@@ -58,10 +56,7 @@ static GBitmap *s_fish_bitmap;
 static int32_t s_day=-1;
 static int s_fish_index=-1;
 static char s_time_buffer[16],s_date_buffer[24];
-static uint8_t s_tap_count=0;
-static AppTimer *s_tap_timeout=NULL;
-static AppTimer *s_cooldown_timer=NULL;
-static bool s_cooldown=false;
+
 
 static int32_t absolute_day(const struct tm *t) {
   int32_t year=t->tm_year+1900,y=year-1;
@@ -91,26 +86,9 @@ static void update_display(struct tm *tick) {
   text_layer_set_text(s_date_layer,s_date_buffer);
 }
 static void tick_handler(struct tm *tick,TimeUnits changed){update_display(tick);}
-static void reset_taps(void *context) { s_tap_count=0; s_tap_timeout=NULL; }
-static void cooldown_finished(void *context) {
-  s_cooldown=false;
-  s_cooldown_timer=NULL;
-}
+
 // Pebble emits an event for its recognized double-tap gesture.
-// Require two such events, then advance silently and lock out repeats.
-static void accel_tap_handler(AccelAxisType axis,int32_t direction) {
-  if(s_cooldown) return;
-  if(s_tap_timeout) {app_timer_cancel(s_tap_timeout);s_tap_timeout=NULL;}
-  s_tap_count++;
-  if(s_tap_count>=2) {
-    s_tap_count=0;
-    display_fish((s_fish_index+1)%NUM_FISH);
-    s_cooldown=true;
-    s_cooldown_timer=app_timer_register(ADVANCE_COOLDOWN_MS,cooldown_finished,NULL);
-  } else {
-    s_tap_timeout=app_timer_register(DOUBLE_TAP_PAIR_WINDOW_MS,reset_taps,NULL);
-  }
-}
+
 static TextLayer *make_label(GRect frame,const char *font_key,GTextAlignment align) {
   TextLayer *layer=text_layer_create(frame);
   text_layer_set_background_color(layer,GColorClear);
@@ -136,12 +114,9 @@ static void init(void) {
   s_date_layer=make_label(GRect(4,210,w-8,18),FONT_KEY_GOTHIC_14,GTextAlignmentCenter);
   time_t now=time(NULL);update_display(localtime(&now));
   tick_timer_service_subscribe(MINUTE_UNIT,tick_handler);
-  accel_tap_service_subscribe(accel_tap_handler);
 }
 static void deinit(void) {
-  accel_tap_service_unsubscribe();tick_timer_service_unsubscribe();
-  if(s_tap_timeout)app_timer_cancel(s_tap_timeout);
-  if(s_cooldown_timer)app_timer_cancel(s_cooldown_timer);
+  tick_timer_service_unsubscribe();
   if(s_fish_bitmap)gbitmap_destroy(s_fish_bitmap);
   bitmap_layer_destroy(s_fish_layer);
   text_layer_destroy(s_time_layer);text_layer_destroy(s_date_layer);
