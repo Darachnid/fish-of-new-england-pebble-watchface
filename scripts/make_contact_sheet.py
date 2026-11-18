@@ -1,54 +1,52 @@
 #!/usr/bin/env python3
-"""Build a white-backed contact sheet of all color fish plates."""
+"""Build a contact sheet of color fish plates for release review."""
 
 from __future__ import annotations
 
-import math
+import csv
 from pathlib import Path
 
 from PIL import Image, ImageDraw, ImageFont
 
 ROOT = Path(__file__).resolve().parents[1]
+CATALOG = ROOT / "fish_catalog.csv"
 COLOR_DIR = ROOT / "resources" / "images" / "color"
-OUT = ROOT / "screenshots" / "contact_sheet_color.png"
+OUT = ROOT / "screenshots" / "color-contact-sheet.png"
 
-COLS = 8
+COLS = 4
+THUMB_W = 200
+LABEL_H = 28
 PAD = 8
-LABEL_H = 14
-CELL_W = 200
-THUMB_W = 180
 
 
 def main() -> None:
-    files = sorted(COLOR_DIR.glob("*.png"))
-    if len(files) != 44:
-        raise SystemExit(f"expected 44 color PNGs, found {len(files)}")
-    rows = math.ceil(len(files) / COLS)
-    cell_h = THUMB_W // 3 + LABEL_H + PAD
-    w = COLS * CELL_W + PAD
-    h = rows * cell_h + PAD
-    sheet = Image.new("RGB", (w, h), (255, 255, 255))
+    rows = list(csv.DictReader(CATALOG.open(encoding="utf-8")))
+    n = len(rows)
+    rows_n = (n + COLS - 1) // COLS
+    cell_h = THUMB_W // 2 + LABEL_H
+    sheet = Image.new(
+        "RGB",
+        (COLS * (THUMB_W + PAD) + PAD, rows_n * (cell_h + PAD) + PAD),
+        (255, 255, 255),
+    )
     draw = ImageDraw.Draw(sheet)
-    try:
-        font = ImageFont.truetype("/usr/share/fonts/TTF/DejaVuSans.ttf", 10)
-    except OSError:
-        font = ImageFont.load_default()
+    font = ImageFont.load_default()
 
-    for i, path in enumerate(files):
-        col, row = i % COLS, i // COLS
-        x0 = PAD + col * CELL_W
-        y0 = PAD + row * cell_h
-        im = Image.open(path).convert("RGB")
-        im.thumbnail((THUMB_W, THUMB_W // 2), Image.Resampling.LANCZOS)
-        ox = x0 + (CELL_W - im.size[0]) // 2
-        oy = y0 + 2
-        sheet.paste(im, (ox, oy))
-        label = path.stem.replace("_", " ")
-        draw.text((x0 + 4, y0 + THUMB_W // 2 + 4), label, fill=(0, 0, 0), font=font)
+    for i, row in enumerate(rows):
+        col, row_i = i % COLS, i // COLS
+        x = PAD + col * (THUMB_W + PAD)
+        y = PAD + row_i * (cell_h + PAD)
+        src = COLOR_DIR / row["filename"]
+        thumb = Image.open(src).convert("RGB")
+        thumb.thumbnail((THUMB_W, THUMB_W // 2), Image.Resampling.LANCZOS)
+        tx = x + (THUMB_W - thumb.width) // 2
+        sheet.paste(thumb, (tx, y))
+        label = row["common"]
+        draw.text((x, y + thumb.height + 2), label, fill=(0, 0, 0), font=font)
 
     OUT.parent.mkdir(parents=True, exist_ok=True)
     sheet.save(OUT, format="PNG", optimize=True)
-    print(f"Wrote {OUT} ({w}x{h})")
+    print(f"Wrote {OUT} ({sheet.size[0]}x{sheet.size[1]})")
 
 
 if __name__ == "__main__":

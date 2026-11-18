@@ -6,7 +6,7 @@ module.exports = [
   {
     type: "text",
     defaultValue:
-      "White background only. Default: full-color fish. Preview cycles all 44 species every 5 seconds."
+      "White background only. A new fish each day at midnight. Optional preview cycles all 44 species every 5 seconds."
   },
   {
     type: "toggle",
@@ -20,7 +20,7 @@ module.exports = [
     messageKey: "PreviewCycle",
     label: "Preview all species (5 sec)",
     description: "Advances through each fish every 5 seconds (ignores daily rotation).",
-    defaultValue: true
+    defaultValue: false
   },
   {
     type: "submit",

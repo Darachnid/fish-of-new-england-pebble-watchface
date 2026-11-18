@@ -218,18 +218,13 @@ static void init(void) {
 
   if (persist_exists(PERSIST_KEY_PREVIEW_SPECIES)) {
     s_preview_species = persist_read_bool(PERSIST_KEY_PREVIEW_SPECIES);
-  } else {
-    s_preview_species = true;
   }
 
   time_t now = time(NULL);
   struct tm *tick = localtime(&now);
-  s_day = absolute_day(tick);
+  update_display(tick);
   if (s_preview_species) {
-    display_fish(0);
     update_preview_timer();
-  } else {
-    update_display(tick);
   }
   tick_timer_service_subscribe(MINUTE_UNIT, tick_handler);
 }
