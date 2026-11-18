@@ -1,8 +1,11 @@
 {
   "name": "pebble-fish-time",
   "author": "Darachnid",
-  "version": "0.3.3",
+  "version": "0.6.0",
   "private": true,
+  "dependencies": {
+    "@rebble/clay": "^1.1.0"
+  },
   "keywords": [
     "pebble-app",
     "fish",
@@ -12,6 +15,15 @@
     "displayName": "Fish Time",
     "uuid": "87bf3072-420b-47e7-b27a-48cfe85789c1",
     "sdkVersion": "3",
+    "enableMultiJS": true,
+    "capabilities": [
+      "configurable"
+    ],
+    "messageKeys": [
+      "ColorFish",
+      "PreviewCycle",
+      "DisplayStyle"
+    ],
     "targetPlatforms": [
       "emery"
     ],
@@ -28,223 +40,443 @@
         },
         {
           "type": "bitmap",
+          "name": "FISH_COLOR_COREGONUS_LABRADORIUS",
+          "file": "images/color/coregonus_labradorius.png"
+        },
+        {
+          "type": "bitmap",
           "name": "FISH_COREGONUS_LABRADORIUS",
-          "file": "images/coregonus_labradorius.png"
+          "file": "images/mono/coregonus_labradorius.png"
+        },
+        {
+          "type": "bitmap",
+          "name": "FISH_COLOR_OSMERUS_MORDAX",
+          "file": "images/color/osmerus_mordax.png"
         },
         {
           "type": "bitmap",
           "name": "FISH_OSMERUS_MORDAX",
-          "file": "images/osmerus_mordax.png"
+          "file": "images/mono/osmerus_mordax.png"
+        },
+        {
+          "type": "bitmap",
+          "name": "FISH_COLOR_SALVELINUS_FONTINALIS",
+          "file": "images/color/salvelinus_fontinalis.png"
         },
         {
           "type": "bitmap",
           "name": "FISH_SALVELINUS_FONTINALIS",
-          "file": "images/salvelinus_fontinalis.png"
+          "file": "images/mono/salvelinus_fontinalis.png"
+        },
+        {
+          "type": "bitmap",
+          "name": "FISH_COLOR_SALVELINUS_NAMAYCUSH",
+          "file": "images/color/salvelinus_namaycush.png"
         },
         {
           "type": "bitmap",
           "name": "FISH_SALVELINUS_NAMAYCUSH",
-          "file": "images/salvelinus_namaycush.png"
+          "file": "images/mono/salvelinus_namaycush.png"
+        },
+        {
+          "type": "bitmap",
+          "name": "FISH_COLOR_SALMO_SALAR",
+          "file": "images/color/salmo_salar.png"
         },
         {
           "type": "bitmap",
           "name": "FISH_SALMO_SALAR",
-          "file": "images/salmo_salar.png"
+          "file": "images/mono/salmo_salar.png"
+        },
+        {
+          "type": "bitmap",
+          "name": "FISH_COLOR_ESOX_MASQUINONGY",
+          "file": "images/color/esox_masquinongy.png"
         },
         {
           "type": "bitmap",
           "name": "FISH_ESOX_MASQUINONGY",
-          "file": "images/esox_masquinongy.png"
+          "file": "images/mono/esox_masquinongy.png"
+        },
+        {
+          "type": "bitmap",
+          "name": "FISH_COLOR_ESOX_RETICULATUS",
+          "file": "images/color/esox_reticulatus.png"
         },
         {
           "type": "bitmap",
           "name": "FISH_ESOX_RETICULATUS",
-          "file": "images/esox_reticulatus.png"
+          "file": "images/mono/esox_reticulatus.png"
+        },
+        {
+          "type": "bitmap",
+          "name": "FISH_COLOR_ESOX_AMERICANUS",
+          "file": "images/color/esox_americanus.png"
         },
         {
           "type": "bitmap",
           "name": "FISH_ESOX_AMERICANUS",
-          "file": "images/esox_americanus.png"
+          "file": "images/mono/esox_americanus.png"
+        },
+        {
+          "type": "bitmap",
+          "name": "FISH_COLOR_ESOX_INDUS",
+          "file": "images/color/esox_indus.png"
         },
         {
           "type": "bitmap",
           "name": "FISH_ESOX_INDUS",
-          "file": "images/esox_indus.png"
+          "file": "images/mono/esox_indus.png"
+        },
+        {
+          "type": "bitmap",
+          "name": "FISH_COLOR_COREGONUS_QUADRILATERALIS",
+          "file": "images/color/coregonus_quadrilateralis.png"
         },
         {
           "type": "bitmap",
           "name": "FISH_COREGONUS_QUADRILATERALIS",
-          "file": "images/coregonus_quadrilateralis.png"
+          "file": "images/mono/coregonus_quadrilateralis.png"
+        },
+        {
+          "type": "bitmap",
+          "name": "FISH_COLOR_LEPOMIS_AURITUS",
+          "file": "images/color/lepomis_auritus.png"
         },
         {
           "type": "bitmap",
           "name": "FISH_LEPOMIS_AURITUS",
-          "file": "images/lepomis_auritus.png"
+          "file": "images/mono/lepomis_auritus.png"
+        },
+        {
+          "type": "bitmap",
+          "name": "FISH_COLOR_LEPOMIS_GIBBOSUS",
+          "file": "images/color/lepomis_gibbosus.png"
         },
         {
           "type": "bitmap",
           "name": "FISH_LEPOMIS_GIBBOSUS",
-          "file": "images/lepomis_gibbosus.png"
+          "file": "images/mono/lepomis_gibbosus.png"
+        },
+        {
+          "type": "bitmap",
+          "name": "FISH_COLOR_MENIDIA_NOTATA",
+          "file": "images/color/menidia_notata.png"
         },
         {
           "type": "bitmap",
           "name": "FISH_MENIDIA_NOTATA",
-          "file": "images/menidia_notata.png"
+          "file": "images/mono/menidia_notata.png"
+        },
+        {
+          "type": "bitmap",
+          "name": "FISH_COLOR_ETHEOSTOMA_FUSIFORME",
+          "file": "images/color/etheostoma_fusiforme.png"
         },
         {
           "type": "bitmap",
           "name": "FISH_ETHEOSTOMA_FUSIFORME",
-          "file": "images/etheostoma_fusiforme.png"
+          "file": "images/mono/etheostoma_fusiforme.png"
+        },
+        {
+          "type": "bitmap",
+          "name": "FISH_COLOR_ETHEOSTOMA_CAPRODES",
+          "file": "images/color/etheostoma_caprodes.png"
         },
         {
           "type": "bitmap",
           "name": "FISH_ETHEOSTOMA_CAPRODES",
-          "file": "images/etheostoma_caprodes.png"
+          "file": "images/mono/etheostoma_caprodes.png"
+        },
+        {
+          "type": "bitmap",
+          "name": "FISH_COLOR_ETHEOSTOMA_OLMSTEDI",
+          "file": "images/color/etheostoma_olmstedi.png"
         },
         {
           "type": "bitmap",
           "name": "FISH_ETHEOSTOMA_OLMSTEDI",
-          "file": "images/etheostoma_olmstedi.png"
+          "file": "images/mono/etheostoma_olmstedi.png"
+        },
+        {
+          "type": "bitmap",
+          "name": "FISH_COLOR_ROCCUS_LINEATUS",
+          "file": "images/color/roccus_lineatus.png"
         },
         {
           "type": "bitmap",
           "name": "FISH_ROCCUS_LINEATUS",
-          "file": "images/roccus_lineatus.png"
+          "file": "images/mono/roccus_lineatus.png"
+        },
+        {
+          "type": "bitmap",
+          "name": "FISH_COLOR_MORONE_AMERICANA",
+          "file": "images/color/morone_americana.png"
         },
         {
           "type": "bitmap",
           "name": "FISH_MORONE_AMERICANA",
-          "file": "images/morone_americana.png"
+          "file": "images/mono/morone_americana.png"
+        },
+        {
+          "type": "bitmap",
+          "name": "FISH_COLOR_STIZOSTEDION_CANADENSE",
+          "file": "images/color/stizostedion_canadense.png"
         },
         {
           "type": "bitmap",
           "name": "FISH_STIZOSTEDION_CANADENSE",
-          "file": "images/stizostedion_canadense.png"
+          "file": "images/mono/stizostedion_canadense.png"
+        },
+        {
+          "type": "bitmap",
+          "name": "FISH_COLOR_PERCA_FLAVESCENS_AMERICANA_FLUVIATILIS",
+          "file": "images/color/perca_flavescens_americana_fluviatilis.png"
         },
         {
           "type": "bitmap",
           "name": "FISH_PERCA_FLAVESCENS_AMERICANA_FLUVIATILIS",
-          "file": "images/perca_flavescens_americana_fluviatilis.png"
+          "file": "images/mono/perca_flavescens_americana_fluviatilis.png"
+        },
+        {
+          "type": "bitmap",
+          "name": "FISH_COLOR_AMIURUS_NEBULOSUS",
+          "file": "images/color/amiurus_nebulosus.png"
         },
         {
           "type": "bitmap",
           "name": "FISH_AMIURUS_NEBULOSUS",
-          "file": "images/amiurus_nebulosus.png"
+          "file": "images/mono/amiurus_nebulosus.png"
+        },
+        {
+          "type": "bitmap",
+          "name": "FISH_COLOR_GASTEROSTEUS_ACULEATUS",
+          "file": "images/color/gasterosteus_aculeatus.png"
         },
         {
           "type": "bitmap",
           "name": "FISH_GASTEROSTEUS_ACULEATUS",
-          "file": "images/gasterosteus_aculeatus.png"
+          "file": "images/mono/gasterosteus_aculeatus.png"
+        },
+        {
+          "type": "bitmap",
+          "name": "FISH_COLOR_COTTUS_GRACILIS",
+          "file": "images/color/cottus_gracilis.png"
         },
         {
           "type": "bitmap",
           "name": "FISH_COTTUS_GRACILIS",
-          "file": "images/cottus_gracilis.png"
+          "file": "images/mono/cottus_gracilis.png"
+        },
+        {
+          "type": "bitmap",
+          "name": "FISH_COLOR_LOTA_LOTA_MACULOSA",
+          "file": "images/color/lota_lota_maculosa.png"
         },
         {
           "type": "bitmap",
           "name": "FISH_LOTA_LOTA_MACULOSA",
-          "file": "images/lota_lota_maculosa.png"
+          "file": "images/mono/lota_lota_maculosa.png"
+        },
+        {
+          "type": "bitmap",
+          "name": "FISH_COLOR_PETROMYZON_MARINUS",
+          "file": "images/color/petromyzon_marinus.png"
         },
         {
           "type": "bitmap",
           "name": "FISH_PETROMYZON_MARINUS",
-          "file": "images/petromyzon_marinus.png"
+          "file": "images/mono/petromyzon_marinus.png"
+        },
+        {
+          "type": "bitmap",
+          "name": "FISH_COLOR_ANQUILLA_ANQUILLA",
+          "file": "images/color/anquilla_anquilla.png"
         },
         {
           "type": "bitmap",
           "name": "FISH_ANQUILLA_ANQUILLA",
-          "file": "images/anquilla_anquilla.png"
+          "file": "images/mono/anquilla_anquilla.png"
+        },
+        {
+          "type": "bitmap",
+          "name": "FISH_COLOR_UMBRA_LIMI",
+          "file": "images/color/umbra_limi.png"
         },
         {
           "type": "bitmap",
           "name": "FISH_UMBRA_LIMI",
-          "file": "images/umbra_limi.png"
+          "file": "images/mono/umbra_limi.png"
+        },
+        {
+          "type": "bitmap",
+          "name": "FISH_COLOR_FUNDULUS_MAJALIS",
+          "file": "images/color/fundulus_majalis.png"
         },
         {
           "type": "bitmap",
           "name": "FISH_FUNDULUS_MAJALIS",
-          "file": "images/fundulus_majalis.png"
+          "file": "images/mono/fundulus_majalis.png"
+        },
+        {
+          "type": "bitmap",
+          "name": "FISH_COLOR_FUNDULUS_HETEROCLITUS",
+          "file": "images/color/fundulus_heteroclitus.png"
         },
         {
           "type": "bitmap",
           "name": "FISH_FUNDULUS_HETEROCLITUS",
-          "file": "images/fundulus_heteroclitus.png"
+          "file": "images/mono/fundulus_heteroclitus.png"
+        },
+        {
+          "type": "bitmap",
+          "name": "FISH_COLOR_FUNDULUS_DIAPHANUS",
+          "file": "images/color/fundulus_diaphanus.png"
         },
         {
           "type": "bitmap",
           "name": "FISH_FUNDULUS_DIAPHANUS",
-          "file": "images/fundulus_diaphanus.png"
+          "file": "images/mono/fundulus_diaphanus.png"
+        },
+        {
+          "type": "bitmap",
+          "name": "FISH_COLOR_CYPRINODON_VARIEGATUS",
+          "file": "images/color/cyprinodon_variegatus.png"
         },
         {
           "type": "bitmap",
           "name": "FISH_CYPRINODON_VARIEGATUS",
-          "file": "images/cyprinodon_variegatus.png"
+          "file": "images/mono/cyprinodon_variegatus.png"
+        },
+        {
+          "type": "bitmap",
+          "name": "FISH_COLOR_CATOSTOMUS_TERES",
+          "file": "images/color/catostomus_teres.png"
         },
         {
           "type": "bitmap",
           "name": "FISH_CATOSTOMUS_TERES",
-          "file": "images/catostomus_teres.png"
+          "file": "images/mono/catostomus_teres.png"
+        },
+        {
+          "type": "bitmap",
+          "name": "FISH_COLOR_ERIMYSON_SUCETTA",
+          "file": "images/color/erimyson_sucetta.png"
         },
         {
           "type": "bitmap",
           "name": "FISH_ERIMYSON_SUCETTA",
-          "file": "images/erimyson_sucetta.png"
+          "file": "images/mono/erimyson_sucetta.png"
+        },
+        {
+          "type": "bitmap",
+          "name": "FISH_COLOR_SEMOTILUS_BULLARIS",
+          "file": "images/color/semotilus_bullaris.png"
         },
         {
           "type": "bitmap",
           "name": "FISH_SEMOTILUS_BULLARIS",
-          "file": "images/semotilus_bullaris.png"
+          "file": "images/mono/semotilus_bullaris.png"
+        },
+        {
+          "type": "bitmap",
+          "name": "FISH_COLOR_SEMOTILUS_ATROMACULATUS",
+          "file": "images/color/semotilus_atromaculatus.png"
         },
         {
           "type": "bitmap",
           "name": "FISH_SEMOTILUS_ATROMACULATUS",
-          "file": "images/semotilus_atromaculatus.png"
+          "file": "images/mono/semotilus_atromaculatus.png"
+        },
+        {
+          "type": "bitmap",
+          "name": "FISH_COLOR_RHINICHTYS_ATRONASUS",
+          "file": "images/color/rhinichtys_atronasus.png"
         },
         {
           "type": "bitmap",
           "name": "FISH_RHINICHTYS_ATRONASUS",
-          "file": "images/rhinichtys_atronasus.png"
+          "file": "images/mono/rhinichtys_atronasus.png"
+        },
+        {
+          "type": "bitmap",
+          "name": "FISH_COLOR_RHINICHTYS_CATARACT",
+          "file": "images/color/rhinichtys_cataract.png"
         },
         {
           "type": "bitmap",
           "name": "FISH_RHINICHTYS_CATARACT",
-          "file": "images/rhinichtys_cataract.png"
+          "file": "images/mono/rhinichtys_cataract.png"
+        },
+        {
+          "type": "bitmap",
+          "name": "FISH_COLOR_PIMEPHALES_NOTATUS",
+          "file": "images/color/pimephales_notatus.png"
         },
         {
           "type": "bitmap",
           "name": "FISH_PIMEPHALES_NOTATUS",
-          "file": "images/pimephales_notatus.png"
+          "file": "images/mono/pimephales_notatus.png"
+        },
+        {
+          "type": "bitmap",
+          "name": "FISH_COLOR_PIMEPHALES_PROMELAS",
+          "file": "images/color/pimephales_promelas.png"
         },
         {
           "type": "bitmap",
           "name": "FISH_PIMEPHALES_PROMELAS",
-          "file": "images/pimephales_promelas.png"
+          "file": "images/mono/pimephales_promelas.png"
+        },
+        {
+          "type": "bitmap",
+          "name": "FISH_COLOR_NOTROPIS_BIFRENATUS",
+          "file": "images/color/notropis_bifrenatus.png"
         },
         {
           "type": "bitmap",
           "name": "FISH_NOTROPIS_BIFRENATUS",
-          "file": "images/notropis_bifrenatus.png"
+          "file": "images/mono/notropis_bifrenatus.png"
+        },
+        {
+          "type": "bitmap",
+          "name": "FISH_COLOR_NOTROPIS_CORNUTUS",
+          "file": "images/color/notropis_cornutus.png"
         },
         {
           "type": "bitmap",
           "name": "FISH_NOTROPIS_CORNUTUS",
-          "file": "images/notropis_cornutus.png"
+          "file": "images/mono/notropis_cornutus.png"
+        },
+        {
+          "type": "bitmap",
+          "name": "FISH_COLOR_NOTEMIGONUS_CHRYSOLEUCUS",
+          "file": "images/color/notemigonus_chrysoleucus.png"
         },
         {
           "type": "bitmap",
           "name": "FISH_NOTEMIGONUS_CHRYSOLEUCUS",
-          "file": "images/notemigonus_chrysoleucus.png"
+          "file": "images/mono/notemigonus_chrysoleucus.png"
+        },
+        {
+          "type": "bitmap",
+          "name": "FISH_COLOR_CLUPEA_PSEUDOHARENGUS",
+          "file": "images/color/clupea_pseudoharengus.png"
         },
         {
           "type": "bitmap",
           "name": "FISH_CLUPEA_PSEUDOHARENGUS",
-          "file": "images/clupea_pseudoharengus.png"
+          "file": "images/mono/clupea_pseudoharengus.png"
+        },
+        {
+          "type": "bitmap",
+          "name": "FISH_COLOR_CLUPEA_SAPIDISSIMA",
+          "file": "images/color/clupea_sapidissima.png"
         },
         {
           "type": "bitmap",
           "name": "FISH_CLUPEA_SAPIDISSIMA",
-          "file": "images/clupea_sapidissima.png"
+          "file": "images/mono/clupea_sapidissima.png"
         }
       ]
     }
