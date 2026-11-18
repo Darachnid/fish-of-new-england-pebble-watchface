@@ -4,6 +4,9 @@ on:
   push:
     branches:
       - "pixel-watch-photo-fish"
+  pull_request:
+    branches:
+      - "main"
   workflow_dispatch:
 
 permissions:
@@ -17,6 +20,8 @@ jobs:
     steps:
       - name: Check out
         uses: actions/checkout@v5
+        with:
+          ref: ${{ github.event.pull_request.head.ref || github.ref }}
 
       - name: Set up Python
         uses: actions/setup-python@v6
@@ -46,6 +51,7 @@ jobs:
         run: gradle :watchface:assembleDebug --no-daemon
 
       - name: Commit generated assets
+        if: github.event_name != 'pull_request' || github.event.pull_request.head.repo.full_name == github.repository
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
@@ -57,7 +63,7 @@ jobs:
             echo "No generated changes to commit."
           else
             git commit -m "Generate color photo fish assets for Pixel Watch"
-            git push
+            git push origin HEAD:${{ github.event.pull_request.head.ref || github.ref_name }}
           fi
 
       - name: Upload APK
