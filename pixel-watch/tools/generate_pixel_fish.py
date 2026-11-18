@@ -132,7 +132,8 @@ def colorize_line_art(src: Path, common: str, scientific: str) -> Image.Image:
     im = Image.open(src).convert("RGBA")
     gray = ImageOps.grayscale(im)
     alpha = im.getchannel("A")
-    if alpha.getextrema()[1] == 0:
+    amin, amax = alpha.getextrema()
+    if amax == 0 or amin == 255:
         alpha = ImageOps.invert(gray)
     alpha = alpha.point(lambda p: 0 if p > 245 else p).filter(ImageFilter.MaxFilter(5))
     dark, light = palette_for(common, scientific)
